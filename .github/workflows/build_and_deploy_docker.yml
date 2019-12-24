@@ -3,7 +3,7 @@ name: external_dns_on_prom
 on: 
   push:
     branches:    
-      - master    
+      - develop
 jobs:
   build_and_deploy_docker:
     runs-on: ubuntu-latest
