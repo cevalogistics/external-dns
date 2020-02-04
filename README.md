@@ -3,6 +3,9 @@
 </p>
 
 # ExternalDNS
+
+![external_dns_on_prem](https://github.com/cevalogistics/external-dns/workflows/external_dns_on_prem/badge.svg?branch=develop)
+
 [![Build Status](https://travis-ci.org/kubernetes-sigs/external-dns.svg?branch=master)](https://travis-ci.org/kubernetes-sigs/external-dns)
 [![Coverage Status](https://coveralls.io/repos/github/kubernetes-sigs/external-dns/badge.svg?branch=master)](https://coveralls.io/github/kubernetes-sigs/external-dns?branch=master)
 [![GitHub release](https://img.shields.io/github/release/kubernetes-sigs/external-dns.svg)](https://github.com/kubernetes-sigs/external-dns/releases)
