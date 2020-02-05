@@ -333,16 +333,16 @@ func (p coreDNSProvider) ApplyChanges(ctx context.Context, changes *plan.Changes
 				}
 				setdnsName := dnsName
 				//if ep.RecordType == endpoint.RecordTypeA {
-				if isOnPremAddressSupportAllowed {
-					matched, _ := regexp.MatchString(";", setdnsName)
-					// Test the result.
-					if matched {
-						result := strings.Split(setdnsName, ";")
-						target = result[1]
-						setdnsName = result[0]
-						log.Warnf("CoreDNS On-Prem Support 'A' Record - Found IP Address surrogate: %s split: %v", setdnsName, result[1])
-					}
-				}
+				//if isOnPremAddressSupportAllowed {
+				//	matched, _ := regexp.MatchString(";", setdnsName)
+				//	// Test the result.
+				//	if matched {
+				//		result := strings.Split(setdnsName, ";")
+				//		target = result[1]
+				//		setdnsName = result[0]
+				//		log.Warnf("CoreDNS On-Prem Support 'A' Record - Found IP Address surrogate: %s split: %v", setdnsName, result[1])
+				//	}
+				//}
 				//}
 
 				service := Service{
