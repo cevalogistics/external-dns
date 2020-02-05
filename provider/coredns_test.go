@@ -21,7 +21,6 @@ import (
 	"os"
 	"strings"
 	"testing"
-
 	"sigs.k8s.io/external-dns/endpoint"
 	"sigs.k8s.io/external-dns/plan"
 	log "github.com/sirupsen/logrus"
