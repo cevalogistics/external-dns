@@ -15,10 +15,9 @@
 # builder image
 FROM golang:1.13 as builder
 
-#ARG  http_proxy="http://LAB-SVC-Inception:Welcome1@nadevproxy.logistics.corp:3128"
-#ARG https_proxy="http://LAB-SVC-Inception:Welcome1@nadevproxy.logistics.corp:3128"
+ARG VERSION
 
-WORKDIR /github.com/kubernetes-sigs/external-dns
+WORKDIR /sigs.k8s.io/external-dns
 
 COPY . .
 RUN go mod vendor && \
@@ -35,7 +34,7 @@ RUN apk add ca-certificates && update-ca-certificates
 RUN apk add --no-cache ca-certificates && \
     update-ca-certificates
 
-COPY --from=builder /github.com/kubernetes-sigs/external-dns/build/external-dns /bin/external-dns
+COPY --from=builder /sigs.k8s.io/external-dns/build/external-dns /bin/external-dns
 
 # Run as UID for nobody since k8s pod securityContext runAsNonRoot can't resolve the user ID:
 # https://github.com/kubernetes/kubernetes/issues/40958
