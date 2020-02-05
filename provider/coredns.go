@@ -28,7 +28,6 @@ import (
 	"math/rand"
 	"net"
 	"os"
-	"regexp"
 	"strings"
 	"time"
 
