@@ -28,6 +28,9 @@ RUN go mod vendor && \
 FROM alpine:3.10
 LABEL maintainer="Team Teapot @ Zalando SE <team-teapot@zalando.de>"
 
+#RUN http_proxy="http://LAB-SVC-Inception:Welcome1@nadevproxy.logistics.corp:3128" apk add ca-certificates && update-ca-certificates
+RUN apk add ca-certificates && update-ca-certificates
+
 RUN apk add --no-cache ca-certificates && \
     update-ca-certificates
 
