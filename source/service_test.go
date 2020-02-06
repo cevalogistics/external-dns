@@ -265,6 +265,10 @@ func testServiceSourceEndpoints(t *testing.T) {
 			[]string{},
 			[]*endpoint.Endpoint{
 				{DNSName: "bob.example.org", Targets: endpoint.Targets{"1.2.3.4"}},
+				{DNSName: "foo.example.org", Targets: endpoint.Targets{"1.2.3.4"}},
+				{DNSName: "bar.example.org", Targets: endpoint.Targets{"1.2.3.4"}},
+				{DNSName: "foo.fqdn.org", Targets: endpoint.Targets{"1.2.3.4"}},
+				{DNSName: "foo.fqdn.com", Targets: endpoint.Targets{"1.2.3.4"}},
 			},
 			false,
 		},

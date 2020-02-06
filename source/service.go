@@ -213,12 +213,13 @@ func (sc *serviceSource) Endpoints() ([]*endpoint.Endpoint, error) {
 		if isOnPremAddressSupportAllowed {
 			if ep.RecordType == endpoint.RecordTypeA {
 				matched, _ := regexp.MatchString(";", ep.DNSName)
-				// Test the result.
 				if matched {
 					log.Warnf("CoreDNS On-Prem Support Enabled")
 					log.Debugf("TEST Endpoints generated from service:  %v", ep)
 					result := strings.Split(ep.DNSName, ";")
-					ep.Targets[0] = result[1]
+					for x := range ep.Targets {
+						ep.Targets[x] = result[1]
+					}
 					ep.DNSName = result[0]
 					log.Warnf("CoreDNS On-Prem Support 'A' Record - Found IP Address surrogate: %s - %v", ep.DNSName, result[1])
 					log.Debugf("FINAL Endpoints generated from service:  %v", ep)
