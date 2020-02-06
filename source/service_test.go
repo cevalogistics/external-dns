@@ -264,7 +264,7 @@ func testServiceSourceEndpoints(t *testing.T) {
 			[]string{"9.8.7.6"},
 			[]string{},
 			[]*endpoint.Endpoint{
-				{DNSName: "bob.example.org", Targets: endpoint.Targets{"9.8.7.6"}},
+				{DNSName: "bob.example.org", Targets: endpoint.Targets{"1.2.3.4"}},
 			},
 			false,
 		},
